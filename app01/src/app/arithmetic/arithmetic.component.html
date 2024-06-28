@@ -1,0 +1,20 @@
+<section>
+    <form>
+        <div>
+            <label>Operand1: </label>
+            <input type="number" name="op1" [(ngModel)]="n1" />
+        </div>
+        <div>
+            <label>Operand2: </label>
+            <input type="number" name="op2" [(ngModel)]="n2" />
+        </div>
+    </form>
+
+    <div>
+        <p>Sum of {{n1}} and {{n2}} is <strong>{{n1+n2}}</strong></p>
+        <p>Difference of {{n1}} and {{n2}} is <strong>{{n1-n2}}</strong></p>
+        <p>Product of {{n1}} and {{n2}} is <strong>{{n1*n2}}</strong></p>
+        <p>Quitiont of {{n1}} by {{n2}} is <strong>{{n1/n2}}</strong></p>
+        <p>Reminder of {{n1}} by {{n2}} is <strong>{{n1%n2}}</strong></p>
+    </div>
+</section>

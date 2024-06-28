@@ -246,7 +246,6 @@ CSS 3
             and that cna be linked to any number of html pages using
                 
                 <link href="fileName.css" rel="stylesheet" />
-
         
         Selector is a string that qualfies the elements to be applied with the style.
 
