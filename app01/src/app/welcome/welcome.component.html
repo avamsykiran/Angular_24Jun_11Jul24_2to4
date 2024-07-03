@@ -1,0 +1,20 @@
+<div>
+    <img [src]="logos[logoIndex]" (click)="toggle()" [style.width.px]="logoWidth" [ngClass]="classController" />
+
+    <form>
+
+        <div>
+            <label>
+                <input type="checkbox" [(ngModel)]="classController.bordered" name="cb1" /> Apply Border
+            </label>
+            <label>
+                <input type="checkbox" [(ngModel)]="classController.centered" name="cb2" /> Apply Center
+            </label>
+        </div>
+
+        <div>
+            <label>Image Width: <strong>{{logoWidth}} px </strong> </label>
+            <input type="range" min="100" max="1000" name="w" [(ngModel)]="logoWidth" />
+        </div>
+    </form>
+</div>

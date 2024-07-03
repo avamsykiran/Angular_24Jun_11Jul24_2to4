@@ -244,3 +244,23 @@ Angular
                     <p (mouseover)="changeToColorSet1()" (mouseleave)="changeToColorSet2()"> a test para. </p>
 
                 Style Binding
+
+                    (a) style.cssProperty
+
+                            <element [style.cssProperty]="field"> content </element>
+
+                    (b) ngStyle
+
+                            <element [ngStyle]="{cssProperty:vale,cssProperty:value}"> content </element>
+
+                    (c) class.className
+
+                        <element [class.className]="booleanField"> content </element>
+
+                    (c) ngClass
+
+                        <element [ngClass]="['className1','className2']"> content </element>
+
+                        <element [ngClass]="{'className1':booelanValue,'className2':booleanValue}"> content </element>
+
+                    
