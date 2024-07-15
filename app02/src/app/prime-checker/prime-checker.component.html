@@ -1,0 +1,22 @@
+<section class="col-8 border border-primary p-4 mx-auto mb-4">
+    <h4>Prime Checking..!</h4>
+
+    <form class="form-inline" class="mb-2" (ngSubmit)="checkFactors()">
+        <label class="form-label">A Number:</label>
+        <input type="number" name="tb1" [(ngModel)]="n" class="me-2"/>
+        <button class="btn btn-primary me-2" >Check</button>
+    </form>
+
+    @if(factors){
+        @if(factors.length>2){
+            <p><strong>{{n}} is a composite number, the follwoing are the factors of {{n}}.</strong></p>
+            <div>
+               @for (f of factors; track $index) {
+                <span>{{f}},  </span>
+               }
+            </div>
+        }@else {
+            <p><strong>{{n}} is a Prime!</strong></p>
+        }
+    }
+</section>

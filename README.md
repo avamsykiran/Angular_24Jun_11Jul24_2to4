@@ -263,4 +263,141 @@ Angular
 
                         <element [ngClass]="{'className1':booelanValue,'className2':booleanValue}"> content </element>
 
-                    
+    Standalone Components
+
+        is a new feature introduced in angualr eliminating the neccacity of the root-module or any module
+        to hold a component. This reduces the boilerplate code and as well it enables faster performence.
+
+    Integrating Bootstrap With Angular
+
+        npm i bootstrap  (or)
+
+        ng add bootstrap
+
+        in the angular.json 
+            in styles section include 'node_modules/bootstrap/dist/css/bootstrap.min.css'
+            in sscripts section include 'node_modules/bootstrap/dist/js/bootstrap.min.js'
+
+    Angular Built-in Contol Flows
+
+        @if(cond){
+            <p> appears when the cond is true </p>
+        } @else {
+            <p> appears when the cond is false </p>
+        }
+
+        @for(loopingVar of array) {
+            <p> this para repats itself once for each value in that array </p>
+        } @empty {
+            <p> a msg to appear when the array is empty </p>
+        }
+
+        @switch(expression) {
+            @case(possibleValue1) {
+                <p> this para appears if the expression evaluates to possibleValue1 </p>
+            }
+            @case(possibleValue2) {
+                <p> this para appears if the expression evaluates to possibleValue2 </p>
+            }
+            @case(possibleValue3) {
+                <p> this para appears if the expression evaluates to possibleValue3 </p>
+            }
+            @default {
+                <p> this para appears when none of the valeus match the expression </p>
+            }
+        }
+
+    Pipe
+
+        a pipe is a tool that accepts a value and transform it into some other
+        value before rendering.
+
+        {{value|pipeName:'pipeArgs'}}
+
+        built-in pipes
+
+            lowercase
+            uppercase
+            titlecase
+            number
+            currency
+            date
+            async
+            json
+
+        custom pipe
+
+            ng g pipe IntoWords --skip-tests
+
+            @Pipe({
+                name:"intoWords"
+            })
+            export class IntoWordsPipe implements PipeTranform {
+                transform(value:any) : any{
+                    //.....
+                    return result;
+                }
+            }
+
+    Services
+
+        A service is used to hold presentation-independent bussiness logic like
+        computations or api-calls ...etc.,
+
+        ng g service SalesService --skip-tests
+
+        @Injectable({
+            providedIn:'root'
+        })
+        export class SalesService {
+
+        }
+
+        Objects of services are not instantiated by the developer, rather they are 
+        injected into the components or pipes or directive throuygh their constructor.
+
+    Routing
+
+        allows us to display a componetn based on the path in the URL.
+
+        'RouterModule'     from  '@angular/router'.
+
+            Routes          Route[]
+
+            Route           {
+                                path:'/path',
+                                component:ComponenetName,
+                                redirectTo:'/anotherPath',
+                                pathMatch:'startsWith|full'
+                            }
+
+            router-outlet       built-in component, and is the placeholder of the result of routing.
+
+            ActivatedRoute      service, is used to retrive information from the url, like path variables ..etc.,
+
+            Router              service, is used to navigate between components programatically
+                                navigateByUrl("/sales/discounts")
+                                navigate(["/sales","/discount"])
+
+            routerLink          directive, used on 'a' tag instead of 'href' attribute to mention the path .
+
+            routerLinkActive    directive, that applies a given css-class on teh 'a' element only when it is visited.
+
+    Angular Forms
+
+        Template Driven Forms
+            FormsModule
+
+                ngForm
+                ngModel
+
+        Model Driven forms / ReactiveForms
+            ReactiveFormsModule
+
+                FormConrol
+                FormGroup
+
+                The form is modeled in the component class and
+                is wired in teh template.
+
+                

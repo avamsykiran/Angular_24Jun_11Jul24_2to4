@@ -1,0 +1,48 @@
+<section class="col-8 border border-primary p-4 mx-auto mb-4">
+    <h4>EMI Caliculator</h4>
+
+    <div class="row">
+        <div class="col">
+            <form (ngSubmit)="compute()">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label class="form-label">Loan Amount: </label>
+                            <input type="number" name="tb1" [(ngModel)]="amount" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label class="form-label">Rate Of Interest: </label>
+                            <input type="number" name="tb2" [(ngModel)]="roi" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label class="form-label">EMI Count: </label>
+                            <input type="number" name="tb3" [(ngModel)]="terms" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label class="form-label">Disbursment Date</label>
+                            <input type="date" name="tb4" [(ngModel)]="disbursmentDate" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="d-grid mt-1">
+                    <button class="btn btn-primary">COMPUTE</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-3 ms-2">
+            <div>
+                <p>EMI: {{emi}} </p>
+                <p>EMI Start Date: {{emiStartDate}}</p>
+                <p>EMI End Date: {{emiEndDate}}</p>
+            </div>
+        </div>
+    </div>
+</section>

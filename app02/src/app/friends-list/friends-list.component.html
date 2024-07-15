@@ -1,0 +1,22 @@
+<section class="col-8 border border-primary p-4 mx-auto mb-4">
+    <h4>Friends List</h4>
+
+    <form class="form-inline" class="mb-2" (ngSubmit)="add()">
+        <label class="form-label">Friend Name:</label>
+        <input type="text" name="tb1" [(ngModel)]="fnm" class="me-2"/>
+        <button class="btn btn-primary me-2" >ADD</button>
+    </form>
+
+    @if(friends.length>0){
+        <ol>
+           @for (f of friends; track $index) {
+            <li> 
+                {{f}} 
+                <button type="button" class="btn btn-sm btn-danger ms-2" (click)="remove($index)">DEL</button>
+            </li>
+           }
+        </ol>
+    }@else {
+        <p><strong>No friends yet to display!</strong></p>
+    }
+</section>

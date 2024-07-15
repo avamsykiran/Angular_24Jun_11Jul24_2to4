@@ -1,0 +1,55 @@
+<section class="col-8 border border-primary p-4 mx-auto mb-4">
+    <h4>String Related Pipes</h4>
+
+    <div>
+        <div>Original: <strong>{{str}}</strong></div>
+        <div> <strong>{{str|lowercase}}</strong></div>
+        <div> <strong>{{str|uppercase}}</strong></div>
+        <div> <strong>{{str|titlecase}}</strong></div>
+    </div>
+</section>
+<section class="col-8 border border-primary p-4 mx-auto mb-4">
+    <h4>Number Pipe</h4>
+
+    <div>
+        <div>Original: <strong>{{num}}</strong></div>
+        <div> <strong>{{num|number:'5.10-10'}}</strong></div>
+        <div> <strong>{{num|number:'2.0-0'}}</strong></div>
+        <div> <strong>{{num|number:'3.2-4'}}</strong></div>
+    </div>
+</section>
+<section class="col-8 border border-primary p-4 mx-auto mb-4">
+    <h4>Currency Pipe</h4>
+
+    <div>
+        <div>Original: <strong>{{num}}</strong></div>
+        <div> <strong>{{num|currency:'INR'}}</strong></div>
+        <div> <strong>{{num|currency:'USD'}}</strong></div>
+        <div> <strong>{{num|currency:'GBP'}}</strong></div>
+        <div> <strong>{{num|currency:'AUD'}}</strong></div>
+        <div> <strong>{{num|currency:'JPY'}}</strong></div>
+        <div> <strong>{{num|currency:'XYZ'}}</strong></div>
+    </div>
+</section>
+<section class="col-8 border border-primary p-4 mx-auto mb-4">
+    <h4>Date Pipe</h4>
+
+    <div>
+        <div>Original: <strong>{{dt}}</strong></div>
+        <div> <strong>{{dt|date:'short'}}</strong></div>
+        <div> <strong>{{dt|date:'long'}}</strong></div>
+        <div> <strong>{{dt|date:'dd-MM-yy'}}</strong></div>
+        <div> <strong>{{dt|date:'dd-MMM-yyyy'}}</strong></div>
+        <div> <strong>{{dt|date:'dd-MMMM-yyyy'}}</strong></div>
+        <div> <strong>{{dt|date:'dd-MMM-yy hh:mm:ss aa'}}</strong></div>
+        <div> <strong>{{dt|date:'dd-MMM-yy HH:mm:ss'}}</strong></div>
+    </div>
+</section>
+<section class="col-8 border border-primary p-4 mx-auto mb-4">
+    <h4>Custome Pipe</h4>
+
+    <div>
+        <div>Original: <strong>{{num}}</strong></div>
+        <div> <strong>{{num|intoWords}}</strong></div>
+    </div>
+</section>

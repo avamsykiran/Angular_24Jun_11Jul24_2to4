@@ -1,0 +1,67 @@
+<section class="col-sm-5 mx-auto border border-primary p-4">
+    <h4>{{isEditing?"Edit":"New"}} Contact</h4>
+
+    <form [formGroup]="contactform" (ngSubmit)="formSubmitted()">
+        <div class="form-group">
+            <label class="form-label">Contact#</label>
+            <input type="number" formControlName="id" readonly class="form-control" />
+        </div>
+        <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" formControlName="fullName" class="form-control" />
+            @if(fullName.invalid && (fullName.touched || fullName.dirty)){
+            <div>
+                @if(fullName.errors!['required']){
+                <span> Full Name is a mandatory field</span>
+                }
+                @if(fullName.errors!['minlength'] || fullName.errors!['maxlength']){
+                <span> Full Name is expecteed to be 5 letter minimum to 20 letter maximum in length</span>
+                }
+            </div>
+            }
+        </div>
+        <div class="form-group">
+            <label class="form-label">Mobile Number</label>
+            <input type="text" formControlName="mobileNumber" class="form-control" />
+            @if(mobileNumber.invalid && (mobileNumber.touched || mobileNumber.dirty)){
+            <div>
+                @if(mobileNumber.errors!['required']){
+                <span> Mobile Number is a mandatory field</span>
+                }
+                @if(mobileNumber.errors!['pattern']){
+                <span> Mobile Number must be a 10 digit number </span>
+                }
+            </div>
+            }
+        </div>
+        <div class="form-group">
+            <label class="form-label">Mail Id</label>
+            <input type="text" formControlName="mailId" class="form-control" />
+
+            @if(mailId.invalid && (mailId.touched || mailId.dirty)){
+            <div>
+                @if(mailId.errors!['required']){
+                <span> Mail Id is a mandatory field</span>
+                }
+                @if(mailId.errors!['email']){
+                <span> A valid email id please. </span>
+                }
+            </div>
+            }
+        </div>
+        <div class="form-group">
+            <label class="form-label">Date Of Brith</label>
+            <input type="date" formControlName="dob" class="form-control" />
+            @if(dob.invalid && (dob.touched || dob.dirty)){
+            <div>
+                @if(dob.errors!['required']){
+                <span> Date Of Birth is a mandatory field</span>
+                }
+            </div>
+            }
+        </div>
+        <div class="d-grid mt-1">
+            <button class="btn btn-primary" [disabled]="!contactform.valid">SAVE</button>
+        </div>
+    </form>
+</section>
